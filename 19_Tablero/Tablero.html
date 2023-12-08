@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let number = parseInt(prompt("Introduce un valor superior a cero:"));
+      while (number == 0) {
+        console.log("El valor no puede ser cero");
+        number = parseInt(prompt("Introduce un valor superior a cero:"));
+      }
+      let Cero = "O";
+      let Equis = "X";
+      let Linea = "";
+      for (let Fila = 0; Fila < number; Fila = Fila + 1) {
+        for (let Columna = 0; Columna < number; Columna = Columna + 1) {
+          if (Columna % 2 != 0) {
+            Linea = Linea += Equis;
+          } else {
+            Linea = Linea += Cero;
+          }
+        }
+        console.log(Linea);
+        Linea = "";
+        if (Fila % 2 != 0) {
+          Equis = "O";
+          Cero = "X";
+        } else {
+          Equis = "X";
+          Cero = "O";
+        }
+      }
+    </script>
+  </body>
+</html>
